@@ -1,5 +1,6 @@
     on: 
       pull_request_target:
+          types: [edit]
     jobs:
       build:
         name: Autograding
@@ -12,7 +13,7 @@
                 TOKEN: ${{ secrets.token }}
             run: echo $TOKEN
           - name: Check out tests private repo
-            uses: actions/checkout@master
+            uses: actions/checkout@main
             with:
               repository: testgitclassroom-java/SandwichExtractorTests
               path: src/test/java
